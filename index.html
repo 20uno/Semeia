@@ -11,16 +11,16 @@
     <h1>OiYah</h1>
     <nav>
       <a href="#feed">Estudios</a>
-      <a href="#musica">Música</a>
       <a href="#versiculos">Versículos</a>
+      <a href="#musica">Música</a>
       <a target="_blank" href="https://github.com/TU_USUARIO/ESTE_REPO/discussions">Comunidad</a>
     </nav>
   </header>
 
   <main>
-    <!-- Tarjeta 1: Feed de estudios -->
-    <section id="feed" class="card">
-      <h2>Feed de estudios</h2>
+    <!-- Sección principal: Estudios -->
+    <section id="feed" class="card card-principal">
+      <h2>Estudios bíblicos</h2>
       <form id="form-estudio">
         <input type="text" id="titulo" placeholder="Título del estudio" required />
         <input type="text" id="pasajes" placeholder="Pasajes (ej. Mateo 5–7)" required />
@@ -30,21 +30,21 @@
       <div id="lista-estudios" class="grid"></div>
     </section>
 
-    <!-- Tarjeta 2: Música -->
-    <section id="musica" class="card">
-      <h2>Música</h2>
-      <select id="track"></select>
-      <audio id="player" controls></audio>
-    </section>
-
-    <!-- Tarjeta 3: Generador de imágenes -->
-    <section id="versiculos" class="card">
+    <!-- Herramienta independiente: Versículos en imágenes -->
+    <section id="versiculos" class="card card-principal">
       <h2>Imágenes con versículos</h2>
       <textarea id="texto-versiculo" rows="3" placeholder="Escribe el versículo..."></textarea>
       <input type="text" id="referencia" placeholder="Referencia (ej. Salmo 23:1)" />
       <button id="generar">Generar imagen</button>
       <canvas id="lienzo" width="800" height="800"></canvas>
       <button id="descargar" disabled>Descargar</button>
+    </section>
+
+    <!-- Accesorio: Música -->
+    <section id="musica" class="card card-secundaria">
+      <h2>Música</h2>
+      <select id="track"></select>
+      <audio id="player" controls></audio>
     </section>
   </main>
 
