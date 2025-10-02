@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estudio bíblico y comunidad</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Estudio bíblico y comunidad</h1>
+    <nav>
+      <a href="#feed">Estudios</a>
+      <a href="#musica">Música</a>
+      <a href="#versiculos">Imágenes con versículos</a>
+      <a target="_blank" href="https://github.com/TU_USUARIO/ESTE_REPO/discussions">Comunidad</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="feed" class="card">
+      <h2>Feed de estudios</h2>
+      <form id="form-estudio">
+        <input type="text" id="titulo" placeholder="Título del estudio" required />
+        <input type="text" id="pasajes" placeholder="Pasajes (ej. Mateo 5–7)" required />
+        <input type="url" id="enlace" placeholder="Enlace (GitHub Discussion o guía)" />
+        <button type="submit">Publicar local</button>
+      </form>
+      <div id="lista-estudios" class="grid"></div>
+      <div class="hint">
+        <p>Para publicar y comentar en comunidad, usa <a target="_blank" href="https://github.com/TU_USUARIO/ESTE_REPO/discussions">Discussions</a>.</p>
+      </div>
+    </section>
+
+    <section id="musica" class="card">
+      <h2>Música</h2>
+      <div class="playlist">
+        <label for="track">Selecciona pista:</label>
+        <select id="track"></select>
+      </div>
+      <audio id="player" controls></audio>
+      <div class="hint">
+        <p>Puedes usar enlaces a audio/YouTube/Spotify o subir archivos al repo.</p>
+      </div>
+    </section>
+
+    <section id="versiculos" class="card">
+      <h2>Imágenes con versículos</h2>
+      <textarea id="texto-versiculo" rows="3" placeholder="Escribe el versículo..."></textarea>
+      <input type="text" id="referencia" placeholder="Referencia (ej. Salmo 23:1)" />
+      <select id="font-select">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans</option>
+        <option value="georgia">Georgia</option>
+        <option value="garamond">Garamond</option>
+      </select>
+      <button id="generar">Generar imagen</button>
+      <canvas id="lienzo" width="1080" height="1080"></canvas>
+      <button id="descargar" disabled>Descargar PNG</button>
+    </section>
+  </main>
+
+  <footer>
+    <small>Inspirado en comunidad y reciprocidad. © TU_NOMBRE</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
