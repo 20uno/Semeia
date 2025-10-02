@@ -13,6 +13,7 @@ body {
   color: var(--text);
 }
 
+/* Barra superior */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -22,6 +23,7 @@ body {
   background: #fff;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 nav a {
@@ -29,23 +31,36 @@ nav a {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
-}
-nav a:hover {
-  color: var(--accent);
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  padding-bottom: 2px;
 }
 
+nav a:hover {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Contenido principal */
 main {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.card {
+/* Tarjetas y elementos */
+.card, .item {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* sombra suave */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover, .item:hover {
+  transform: translateY(-3px); /* ligero levantamiento */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* sombra más marcada */
 }
 
 h1, h2 {
@@ -53,33 +68,43 @@ h1, h2 {
   color: var(--accent);
 }
 
+/* Formularios */
 form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr auto;
   gap: .5rem;
   margin-bottom: 1rem;
 }
+
 input, textarea, select, button {
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: .6rem;
   font-size: 1rem;
 }
+
+/* Botones */
 button {
   background: var(--accent);
   color: #fff;
   border: none;
   cursor: pointer;
-}
-button:hover {
-  opacity: 0.9;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
+button:hover {
+  background: #3399ff; /* celeste más fuerte */
+  transform: scale(1.03);
+}
+
+/* Grid de estudios */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: .75rem;
 }
+
 .item {
   background: #fff;
   border: 1px solid var(--border);
@@ -87,6 +112,7 @@ button:hover {
   padding: .75rem;
 }
 
+/* Canvas de versículos */
 canvas {
   display: block;
   margin-top: 1rem;
@@ -96,9 +122,17 @@ canvas {
   max-width: 500px;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
   color: #666;
   border-top: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  form {
+    grid-template-columns: 1fr;
+  }
 }
